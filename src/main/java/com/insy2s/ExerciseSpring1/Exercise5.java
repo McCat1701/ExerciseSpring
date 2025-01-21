@@ -19,7 +19,7 @@ import java.util.Map;
 @RestController
 public class Exercise5 {
 
-    private Map<Integer,String > Produit;
+    private static  Map<Integer,String > Produit;
 
     public Exercise5 ()
     {
@@ -31,7 +31,7 @@ public class Exercise5 {
 public String GetProduit (@PathVariable int id )
 {
 
-    return Produit.get(id);
+    return Produit.getOrDefault(id, "Produit n'existe pas");
 }
 
 @GetMapping("/product")
